@@ -1,0 +1,119 @@
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;600&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+    
+     :root {
+        /* colors */
+        --h1-clr: #2e2d2d;
+        --btn-clr: #1890FF;
+        /* fonts */
+        --h1-size: 72px;
+        --h1-wght: 600;
+        /* background */
+        --bg-wrapper: url("https://wallpaperaccess.com/full/410244.jpg");
+    }
+    
+    .main__h1 {
+        color: var(--h1-clr);
+        font-size: var(--h1-size);
+        font-weight: var(--h1-wght);
+        text-align: left;
+        border-bottom: 2px solid #2e2d2d;
+        margin-bottom: 2rem;
+    }
+    
+    .wrapper {
+        background-image: var(--bg-wrapper);
+        background-size: cover;
+        height: 100vh;
+    }
+    
+    .btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 16px;
+        width: 74px;
+        height: 32px;
+        background: var(--btn-clr);
+        border-radius: 2px;
+    }
+    
+    input {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 8px 12px;
+        width: 320px;
+        height: 40px;
+        background: #FFF;
+        border: 1px solid #D9D9D9;
+        box-sizing: border-box;
+        border-radius: 2px;
+    }
+    
+    .lds-ring {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .lds-ring div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border: 8px solid #fff;
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #fff transparent transparent transparent;
+    }
+    
+    .lds-ring div:nth-child(1) {
+        animation-delay: -0.45s;
+    }
+    
+    .lds-ring div:nth-child(2) {
+        animation-delay: -0.3s;
+    }
+    
+    .lds-ring div:nth-child(3) {
+        animation-delay: -0.15s;
+    }
+    
+    @keyframes lds-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    .clock-loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        color: #FFF;
+    }
+    
+    .backdrop {
+        background-color: rgba(0, 0, 0, 0.7);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
