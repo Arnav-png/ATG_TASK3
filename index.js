@@ -4,6 +4,8 @@ var btn = document.getElementById('btn ')
 var req = document.getElementById('req')
 var form1 = document.getElementById('form1')
 var backdrop = document.getElementById('backdrop')
+var btntext = document.getElementById("btntext")
+var spinner = document.getElementById("spinner")
 
 inp1.addEventListener(('keyup'), (e) => {
     const value = e.currentTarget.value;
@@ -18,22 +20,16 @@ inp1.addEventListener(('keyup'), (e) => {
     }
 
 })
-btn.addEventListener(('click'), (e) => {
-    e.preventDefault()
-    backdrop.style.display = "flex"
-})
 
 
 btn.addEventListener(('click'), (e) => {
     e.preventDefault()
+    btntext.style.display = 'none'
+    spinner.style.display = 'flex'
+
     setTimeout(() => {
-        backdrop.style.display = "none"
+        spinner.style.display = 'none'
     }, 2000);
     window.location.reload();
+    // backdrop.style.display = "flex"
 })
-
-
-function myFunc() {
-    preventDefault()
-    console.log("submitted")
-}
