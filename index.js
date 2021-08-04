@@ -11,10 +11,8 @@ inp1.addEventListener(('keyup'), (e) => {
     const value = e.currentTarget.value;
 
     if (value === "") {
-        btn.disabled = true;
         req.style.visibility = 'visible';
     } else {
-        btn.disabled = false
         req.style.visibility = 'hidden';
 
     }
@@ -24,12 +22,14 @@ inp1.addEventListener(('keyup'), (e) => {
 
 btn.addEventListener(('click'), (e) => {
     e.preventDefault()
-    btntext.style.display = 'none'
+    btn.classList.remove('btn')
+    btn.classList.add("btn__loading")
     spinner.style.display = 'flex'
-
     setTimeout(() => {
-        spinner.style.display = 'none'
+        spinner.style.display = 'none';
+        inp1.value = "";
+        btn.classList.remove('btn__loading')
+        btn.classList.add('btn__disabled')
+        btn.disabled = true;
     }, 2000);
-    window.location.reload();
-    // backdrop.style.display = "flex"
 })
